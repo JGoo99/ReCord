@@ -1,0 +1,24 @@
+import cam.FactoryCam;
+import cam.SpeedCam;
+import detector.AccidentDetector;
+import detector.FireDetector;
+import reporter.AccidentReporter;
+import reporter.FireReporter;
+
+public class Main {
+  public static void main(String[] args) {
+    FactoryCam fc = new FactoryCam();
+    fc.setDetector(new FireDetector());
+    fc.setReporter(new FireReporter());
+    fc.detect();
+    fc.report();
+
+    System.out.println("--------------------------");
+
+    SpeedCam sc = new SpeedCam();
+    sc.setDetector(new AccidentDetector());
+    sc.setReporter(new AccidentReporter());
+    sc.detect();
+    sc.report();
+  }
+}

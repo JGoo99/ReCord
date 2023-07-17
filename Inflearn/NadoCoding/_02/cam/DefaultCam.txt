@@ -1,0 +1,9 @@
+package cam;
+
+import reporter.Reportable;
+
+public class DefaultCam {
+  public DefaultCam() {
+    System.out.println("영상 촬영을 시작합니다.");
+  }
+}

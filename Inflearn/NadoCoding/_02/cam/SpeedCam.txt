@@ -1,0 +1,27 @@
+package cam;
+
+import detector.Detectable;
+import reporter.Reportable;
+
+public class SpeedCam extends DefaultCam implements Detectable, Reportable {
+  private Detectable detector;
+  private Reportable reporter;
+
+  public void setDetector(Detectable detector) {
+    this.detector = detector;
+  }
+
+  public void setReporter(Reportable reporter) {
+    this.reporter = reporter;
+  }
+
+  @Override
+  public void detect() {
+    detector.detect();
+  }
+
+  @Override
+  public void report(){
+    reporter.report();
+  }
+}
